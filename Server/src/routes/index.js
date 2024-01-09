@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const archivos = require("./archivos.js");
+const archivos = require("./archivosRouter.js");
 
 router.use("/archivos", archivos);
 
