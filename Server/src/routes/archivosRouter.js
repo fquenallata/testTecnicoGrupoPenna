@@ -1,8 +1,8 @@
-const express = require("express");
-const router = express.Router();
+const { Router } = require("express");
+const archivosRouter = Router();
 
-const { getGenres } = require("../controllers/archivosControllers");
+const { getArchivosById } = require("../handlers/archivosHandler");
 
-router.get("/", getGenres);
+router.get("/", getArchivosById);
 
-module.exports = router;
+module.exports = archivosRouter;

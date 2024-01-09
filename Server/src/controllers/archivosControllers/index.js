@@ -1,5 +1,5 @@
-const getGenres = require("./getGenres.js");
+const getA_ById = require("./getA_ById");
 
 module.exports = {
-  getGenres,
+  getA_ById,
 };
