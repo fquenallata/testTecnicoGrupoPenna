@@ -1,8 +1,16 @@
 const { Router } = require("express");
 const archivosRouter = Router();
 
-const { getArchivosById } = require("../handlers/archivosHandler");
+const {
+  getArchivosById,
+  getAllArchivos,
+  postArchivo,
+  updateArchivoById,
+} = require("../handlers/archivosHandler");
 
-router.get("/", getArchivosById);
+archivosRouter.get("/", getArchivosById);
+archivosRouter.get("/all", getAllArchivos);
+archivosRouter.post("/", postArchivo);
+archivosRouter.put("/", updateArchivoById);
 
 module.exports = archivosRouter;

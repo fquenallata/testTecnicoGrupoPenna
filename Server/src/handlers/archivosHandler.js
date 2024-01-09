@@ -1,8 +1,40 @@
-const { getA_ById } = require("../controllers/archivosControllers");
+const {
+  getArById,
+  getAllAr,
+  postAr,
+  updateArById,
+} = require("../controllers/archivosControllers");
 
-const getArchivosById = async (req, res) => {
+const getArchivosById = (req, res) => {
   try {
-    const response = await getA_ById();
+    const response = getArById();
+    res.status(200).json({ data: response });
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
+
+const getAllArchivos = (req, res) => {
+  try {
+    const response = getAllAr();
+    res.status(200).json({ data: response });
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
+
+const updateArchivoById = (req, res) => {
+  try {
+    const response = updateArById();
+    res.status(200).json({ data: response });
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
+
+const postArchivo = (req, res) => {
+  try {
+    const response = postAr();
     res.status(200).json({ data: response });
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -11,4 +43,7 @@ const getArchivosById = async (req, res) => {
 
 module.exports = {
   getArchivosById,
+  getAllArchivos,
+  updateArchivoById,
+  postArchivo,
 };
