@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const archivosRouter = Router();
+const upload = require("../utils/multer");
 
 const {
   getArchivosById,
@@ -10,7 +11,7 @@ const {
 
 archivosRouter.get("/", getArchivosById);
 archivosRouter.get("/all", getAllArchivos);
-archivosRouter.post("/", postArchivo);
 archivosRouter.put("/", updateArchivoById);
+archivosRouter.post("/", upload.single("archivo"), postArchivo);
 
 module.exports = archivosRouter;
