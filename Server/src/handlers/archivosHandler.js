@@ -7,7 +7,8 @@ const {
 
 const getArchivosById = async (req, res) => {
   try {
-    const response = await getArById();
+    const { id } = req.params;
+    const response = await getArById(id);
     res.status(200).json({ data: response });
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -24,8 +25,9 @@ const getAllArchivos = async (req, res) => {
 };
 
 const updateArchivoById = async (req, res) => {
+  const { id, ...archivosData } = req.body;
   try {
-    const response = await updateArById();
+    const response = await updateArById(id, archivosData);
     res.status(200).json({ data: response });
   } catch (error) {
     res.status(400).json({ message: error.message });

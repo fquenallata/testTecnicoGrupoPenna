@@ -1,8 +1,10 @@
-const getAllAr = () => {
+const { Archivos } = require("../../db");
+
+const getAllAr = async () => {
   try {
-    return "getAllAr";
+    return await Archivos.findAll();
   } catch (error) {
-    throw new Error(error);
+    throw new Error(`Error al obtener archivos: ${error.message}`);
   }
 };
 

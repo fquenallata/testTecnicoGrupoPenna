@@ -1,8 +1,16 @@
-const getArById = () => {
+const { Archivos } = require("../../db");
+
+const getArById = async (id) => {
   try {
-    return "getArById";
+    const archivo = await Archivos.findByPk(id);
+
+    if (!archivo) {
+      throw new Error(`No se encontró un archivo con el ID: ${id}`);
+    }
+
+    return archivo;
   } catch (error) {
-    throw new Error(error);
+    throw new Error(`Error al obtener archivo por ID: ${error.message}`);
   }
 };
 
