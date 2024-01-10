@@ -15,9 +15,8 @@ const updateArById = async (id, archivosData) => {
       );
 
     await Archivos.update(archivosData, { where: { id } });
-    const updatedRow = await Archivos.findOne({ where: { id } });
 
-    return updatedRow;
+    return true;
   } catch (error) {
     throw new Error(error);
   }

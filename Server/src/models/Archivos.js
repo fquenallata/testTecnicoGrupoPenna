@@ -17,9 +17,13 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      ultimaModificacion: {
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
+      },
     },
     {
-      timestamps: true,
+      timestamps: false,
     }
   );
 };

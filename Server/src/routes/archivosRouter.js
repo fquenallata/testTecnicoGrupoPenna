@@ -9,8 +9,8 @@ const {
   updateArchivoById,
 } = require("../handlers/archivosHandler");
 
-archivosRouter.get("/:id", getArchivosById);
 archivosRouter.get("/all", getAllArchivos);
+archivosRouter.get("/:id", getArchivosById);
 archivosRouter.put("/", updateArchivoById);
 archivosRouter.post("/", upload.single("archivo"), postArchivo);
 
