@@ -14,6 +14,11 @@ function MisArchivosTabla() {
     }
   };
 
+  function truncateUrl(url) {
+    const maxLength = 30; // ajusta la longitud máxima según tus necesidades
+    return url.length > maxLength ? `${url.slice(0, maxLength)}...` : url;
+  }
+
   useEffect(() => {
     getall();
   }, []);
@@ -30,17 +35,27 @@ function MisArchivosTabla() {
               <th>titulo</th>
               <th>url</th>
               <th>Fecha de modificacion</th>
+              <th>edit</th>
             </tr>
           </thead>
           <tbody>
-            {/* {archivos.map((archivo) => (
+            {archivos.map((archivo) => (
               <tr key={archivo.id}>
                 <td>{archivo.id}</td>
                 <td>{archivo.titulo}</td>
-                <td>{archivo.url}</td>
-                <td>{archivo.fechaModificacion}</td>
+                <td>
+                  <a
+                    href={archivo.cloudinaryUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {truncateUrl(archivo.cloudinaryUrl)}
+                  </a>
+                </td>
+                <td>{archivo.ultimaModificacion}</td>
+                <td>edit</td>
               </tr>
-            ))} */}
+            ))}
           </tbody>
         </table>
       </div>

@@ -1,0 +1,46 @@
+.mainContainer {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.misArchivos table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+.misArchivos th,
+.misArchivos td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.misArchivos a {
+  color: rgb(255, 230, 0);
+}
+
+.misArchivos a:visited {
+  color: rgb(255, 174, 0);
+}
+
+.misArchivos a:active {
+  color: rgb(255, 174, 0);
+}
+
+@media screen and (max-width: 767px) {
+  .misArchivos th,
+  .misArchivos td {
+    padding: 5px;
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .misArchivos th,
+  .misArchivos td {
+    padding: 15px;
+    font-size: 16px;
+  }
+}

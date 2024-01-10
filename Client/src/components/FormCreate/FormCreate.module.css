@@ -1,0 +1,15 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column; /* Si prefieres una disposición en columna */
+  border: 1px solid rgb(255, 230, 0);
+  padding: 50px 101px 50px 101px;
+  margin: 10px;
+}
+
+.titulo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 0 10px 0;
+  font-size: 17px;
+}
