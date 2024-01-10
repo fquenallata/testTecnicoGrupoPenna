@@ -39,7 +39,6 @@ const postArchivo = async (req, res) => {
       throw new Error("Porfavor selecione una imagen para subir");
     }
     const response = await postAr(titulo, req.file.path);
-    console.log(response);
     res.status(200).json({ data: response });
   } catch (error) {
     res.status(422).json({ message: error.message });
