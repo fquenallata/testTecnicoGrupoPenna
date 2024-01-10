@@ -1,9 +1,11 @@
 .mainContainer {
   display: flex;
   flex-direction: column;
+  width: 30vw;
 }
 .buttonContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -51,4 +53,10 @@
   color: rgb(255, 230, 0);
   border: 1px solid rgb(255, 230, 0);
   cursor: pointer;
+}
+.error {
+  color: red;
+  margin-top: 8px;
+  font-size: 14px;
+  text-align: center;
 }
