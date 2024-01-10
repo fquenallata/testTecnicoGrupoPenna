@@ -11,7 +11,7 @@ const {
 
 archivosRouter.get("/all", getAllArchivos);
 archivosRouter.get("/:id", getArchivosById);
-archivosRouter.put("/", updateArchivoById);
+archivosRouter.put("/", upload.single("archivo"), updateArchivoById);
 archivosRouter.post("/", upload.single("archivo"), postArchivo);
 
 module.exports = archivosRouter;

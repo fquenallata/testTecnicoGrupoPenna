@@ -1,0 +1,54 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.button {
+  background-color: black;
+  width: 100px;
+  height: 25px;
+  color: rgb(255, 230, 0);
+  border: 1px solid rgb(255, 230, 0);
+  cursor: pointer;
+}
+
+.fancyContainer {
+  padding: 0 0 10px 0;
+}
+.fancyFile {
+  display: none;
+}
+
+.fancyFile + label {
+  display: flex;
+  flex: 1;
+}
+
+.fancyFileName,
+.fancyFileButton {
+  padding: 5px 10px;
+}
+
+.fancyFileName {
+  color: white;
+  border: 1px solid whitesmoke;
+  flex: 1;
+}
+
+.fancyFileName span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 205px;
+  display: block;
+}
+.fancyFileButton {
+  color: rgb(255, 230, 0);
+  border: 1px solid rgb(255, 230, 0);
+  cursor: pointer;
+}

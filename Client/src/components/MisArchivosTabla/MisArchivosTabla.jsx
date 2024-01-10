@@ -1,6 +1,7 @@
 import styles from "./MisArchivosTabla.module.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function MisArchivosTabla() {
   const [archivos, setArchivos] = useState([]);
@@ -12,6 +13,12 @@ function MisArchivosTabla() {
     } catch (error) {
       console.error("Error al obtener archivos:", error);
     }
+  };
+
+  const navigate = useNavigate();
+  const handleClickEdit = (id) => {
+    console.log("Botón clickeado");
+    navigate(`/update/${id}`);
   };
 
   function truncateUrl(url) {
@@ -53,7 +60,11 @@ function MisArchivosTabla() {
                   </a>
                 </td>
                 <td>{archivo.ultimaModificacion}</td>
-                <td>edit</td>
+                <td>
+                  <button onClick={() => handleClickEdit(archivo.id)}>
+                    edit
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import styles from "./FormCreate.module.css";
-import FancyFile from "../FancyFile/FancyFile";
+import styles from "./FormUpdate.module.css";
+import FancyFileUpdate from "../FancyFileUpdate/FancyFileUpdate";
 
-const FormCreate = () => {
+const FormUpdate = () => {
   const [titulo, setTitulo] = useState("");
 
   const handleTituloChange = (e) => {
@@ -15,9 +15,9 @@ const FormCreate = () => {
         <label>titulo</label>
         <input type="text" value={titulo} onChange={handleTituloChange} />
       </div>
-      <FancyFile type="post" titulo={titulo} />
+      <FancyFileUpdate type="update" titulo={titulo} />
     </div>
   );
 };
 
-export default FormCreate;
+export default FormUpdate;
