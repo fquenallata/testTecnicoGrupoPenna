@@ -45,7 +45,7 @@ function MisArchivosTabla() {
                 <th>titulo</th>
                 <th>url</th>
                 <th>Fecha de modificacion</th>
-                <th>edit</th>
+                <th>{""}</th>
               </tr>
             </thead>
             <tbody>
@@ -64,7 +64,10 @@ function MisArchivosTabla() {
                   </td>
                   <td>{archivo.ultimaModificacion}</td>
                   <td>
-                    <button onClick={() => handleClickEdit(archivo.id)}>
+                    <button
+                      className={styles.editButton}
+                      onClick={() => handleClickEdit(archivo.id)}
+                    >
                       edit
                     </button>
                   </td>

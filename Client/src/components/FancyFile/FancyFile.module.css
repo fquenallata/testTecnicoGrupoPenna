@@ -1,6 +1,7 @@
 .mainContainer {
   display: flex;
   flex-direction: column;
+  width: 30vw;
 }
 .buttonContainer {
   display: flex;
