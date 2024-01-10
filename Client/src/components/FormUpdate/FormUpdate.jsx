@@ -12,8 +12,13 @@ const FormUpdate = () => {
   return (
     <div className={styles.mainContainer}>
       <div className={styles.titulo}>
-        <label>titulo</label>
-        <input type="text" value={titulo} onChange={handleTituloChange} />
+        <label className={styles.label}>Titulo</label>
+        <input
+          className={styles.input}
+          type="text"
+          value={titulo}
+          onChange={handleTituloChange}
+        />
       </div>
       <FancyFileUpdate type="update" titulo={titulo} />
     </div>

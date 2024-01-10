@@ -5,10 +5,12 @@ import { useNavigate } from "react-router-dom";
 
 const FancyFile = (props) => {
   const [archivo, setArchivo] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const submit = async (e) => {
     e.preventDefault();
+
     const { titulo } = props;
     const formData = new FormData();
     formData.append("archivo", archivo);
@@ -27,6 +29,9 @@ const FancyFile = (props) => {
 
       navigate("/");
     } catch (error) {
+      setError(
+        "Por favor, asegúrate de completar el título y subir un archivo."
+      );
       console.error("error", error.message);
     }
   };
@@ -55,6 +60,7 @@ const FancyFile = (props) => {
         <button className={styles.button} onClick={submit}>
           Enviar
         </button>
+        {error && <p className={styles.error}>{error}</p>}
       </div>
     </div>
   );
