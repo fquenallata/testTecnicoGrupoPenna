@@ -1,16 +1,12 @@
-const FormCreate = () => {
+import FormCreate from "../../components/FormCreate/FormCreate";
+
+const Create = () => {
   return (
     <div>
-      <form>
-        <label
-          type="file"
-          onChange={(e) => {
-            console.log(e);
-          }}
-        ></label>
-      </form>
+      <h1>Create</h1>
+      <FormCreate />
     </div>
   );
 };
 
-export default FormCreate;
+export default Create;
