@@ -35,40 +35,44 @@ function MisArchivosTabla() {
     <div className={styles.mainContainer}>
       <hr />
       <div className={styles.misArchivos}>
-        <table>
-          <thead>
-            <tr>
-              <th>id</th>
-              <th>titulo</th>
-              <th>url</th>
-              <th>Fecha de modificacion</th>
-              <th>edit</th>
-            </tr>
-          </thead>
-          <tbody>
-            {archivos.map((archivo) => (
-              <tr key={archivo.id}>
-                <td>{archivo.id}</td>
-                <td>{archivo.titulo}</td>
-                <td>
-                  <a
-                    href={archivo.cloudinaryUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {truncateUrl(archivo.cloudinaryUrl)}
-                  </a>
-                </td>
-                <td>{archivo.ultimaModificacion}</td>
-                <td>
-                  <button onClick={() => handleClickEdit(archivo.id)}>
-                    edit
-                  </button>
-                </td>
+        {archivos.length === 0 ? (
+          <p>No hay archivos disponibles. Por favor, crea uno.</p>
+        ) : (
+          <table>
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>titulo</th>
+                <th>url</th>
+                <th>Fecha de modificacion</th>
+                <th>edit</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {archivos.map((archivo) => (
+                <tr key={archivo.id}>
+                  <td>{archivo.id}</td>
+                  <td>{archivo.titulo}</td>
+                  <td>
+                    <a
+                      href={archivo.cloudinaryUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {truncateUrl(archivo.cloudinaryUrl)}
+                    </a>
+                  </td>
+                  <td>{archivo.ultimaModificacion}</td>
+                  <td>
+                    <button onClick={() => handleClickEdit(archivo.id)}>
+                      edit
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
     </div>
   );
