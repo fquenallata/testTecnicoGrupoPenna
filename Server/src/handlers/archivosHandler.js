@@ -25,9 +25,10 @@ const getAllArchivos = async (req, res) => {
 };
 
 const updateArchivoById = async (req, res) => {
-  const { id, ...archivosData } = req.body;
   try {
-    const response = await updateArById(id, archivosData);
+    const { id, titulo } = req.body;
+    console.log(titulo);
+    const response = await updateArById(id, titulo, req.file);
     res.status(200).json(response);
   } catch (error) {
     res.status(400).json({ message: error.message });

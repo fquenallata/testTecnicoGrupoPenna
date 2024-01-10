@@ -17,7 +17,7 @@ server.use((req, res, next) => {
   next();
 });
 
-server.use("/", allRoutes);
 server.use(morgan("dev"));
+server.use("/", allRoutes);
 
 module.exports = server;
